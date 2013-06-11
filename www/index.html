@@ -1,0 +1,143 @@
+<html ng-app>
+<head>
+	<link rel="stylesheet" href="../css/foundation.css"></link>
+	<link rel="stylesheet" href="../css/normalize.css"></link>
+	<link rel="stylesheet" href="../css/font-awesome.min.css"></link>
+	<link rel="stylesheet" href="../css/salvius.css"></link>
+	<script src="../js/angular/angular.js"></script>
+	<script src="../js/vendor/zepto.js"></script>
+	<script src="../js/vendor/custom.modernizr.js"></script>
+	<script src="../js/vendor/jquery.js"></script>
+	<script src="../js/foundation.min.js"></script>
+	<script src="../js/dropzone.js"></script>
+	<script src="./controllers.js"></script>
+	<script>
+	$(document).foundation();
+	</script>
+	
+</head>
+<body ng-controller="RobotPageInterface">
+
+<nav class="top-bar" ng-include src="'./nav.html'"></nav>
+
+<div data-alert class="alert-box alert">{{alert}}<a href="#" class="close">&times;</a></div>
+
+  <div class="section-container auto" data-section>
+  <section>
+	<h3 class="title" data-section-title><a href="#panel1"><i class="icon-gamepad"></i> GUI</a></h3>
+	<div class="content" data-section-content>
+	  <p>Graphic interface for the robot.</p>
+	  
+	  <div class="row display">
+	  
+        <div class="large-4 columns">
+			<div class="row collapse">
+			<div class="small-10 columns">
+			<input type="text" placeholder="Text to Speech">
+			</div>
+			<div class="small-2 columns">
+			<a href="#" class="button prefix">Say</a>
+			</div>
+			</div>
+		</div>
+		  
+          <div class="large-4 columns">
+			<div class="progress success round">
+			<span class="meter" style="width: 60%"><label>Battery charge</label></span>
+			</div>
+		  </div>
+		  
+          <div class="large-4 columns">
+			<div class="switch round">
+			<input id="z" name="switch-z" type="radio" checked>
+			<label for="z" onclick="">Teleoperated mode</label>
+
+			<input id="z1" name="switch-z" type="radio">
+			<label for="z1" onclick="">Atonomus mode</label>
+
+			<span></span>
+			</div>
+		  </div>
+        </div>
+		
+		<div class="row display">
+		
+			<div class="large-4 columns">
+				<div class="row collapse">
+				<div class="small-10 columns">
+				<input type="text" placeholder="Text to Handwriting">
+				</div>
+				<div class="small-2 columns">
+				<a href="#" class="button prefix">Write</a>
+				</div>
+				</div>
+			</div>
+		  
+          <div class="large-4 columns">
+			<img src="../img/img.jpg">
+		  </div>
+		  <div class="large-4 columns">
+		  3
+		  </div>
+        </div>
+		
+	</div>
+	</section>
+	
+	<section>
+		<h3 class="title" data-section-title><a href="#panel2"><i class="icon-eye-open"></i> Sensors</a></h3>
+		<div class="content" data-section-content>
+			<p>Complete listing of all sensor readings</p>
+			
+			
+			
+			<table>
+				<thead>
+					<tr>
+						<th>{{sensors.sensortype}}</th>
+						<th>{{sensors.valuetype}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="sensor in sensors.components">
+						<td>{{sensor.type}}</td>
+						<td>{{sensor.reading}} {{sensor.unit}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	
+	<section>
+	<h3 class="title" data-section-title><a href="#panel2"><i class="icon-sitemap"></i> FTP</a></h3>
+	<div class="content" data-section-content>
+	  <p>Drag files here to upload them. Drag files from here to download them. Click file for options menu to download, view, edit.</p>
+	  
+		<form action="/file-upload" class="dropzone">
+		<div class="fallback">
+		<input name="file" type="file" multiple />
+		</div>
+		</form>
+	  
+	</div>
+	</section>
+	
+	<section>
+		<h3 class="title" data-section-title><a href="#panel2">System</a></h3>
+		<div class="content" data-section-content>
+			<p>Computer, network and hardware information.</p>
+			<div ng-include src="'./partition/index.html'"></div>
+		</div>
+	</section>
+  
+</div>
+
+<!-- Modals in like to live right before the closing body tag -->
+
+<div id="myModal" class="reveal-modal">
+  <div>TERMINAL</div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+</body>
+</html>
