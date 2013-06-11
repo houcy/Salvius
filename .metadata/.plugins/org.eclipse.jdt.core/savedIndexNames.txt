@@ -1,0 +1,1 @@
+INDEX VERSION 1.126+E:\cygwin\home\compsci\github\Salvius\.metadata\.plugins\org.eclipse.jdt.core
