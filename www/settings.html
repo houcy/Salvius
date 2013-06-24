@@ -1,24 +1,82 @@
-<html ng-app>
-<head>
-	<link rel="stylesheet" href="../css/foundation.css"></link>
-	<link rel="stylesheet" href="../css/normalize.css"></link>
-	<link rel="stylesheet" href="../css/font-awesome.min.css"></link>
-	<link rel="stylesheet" href="../css/salvius.css"></link>
-	<script src="../js/angular/angular.js"></script>
-	<script src="../js/vendor/zepto.js"></script>
-	<script src="../js/vendor/custom.modernizr.js"></script>
-	<script src="../js/vendor/jquery.js"></script>
-	<script src="../js/foundation.min.js"></script>
-	<script src="../js/dropzone.js"></script>
-	<script src="./controllers.js"></script>
-	<script>
-	$(document).foundation();
-	</script>
-	
-</head>
-<body ng-controller="RobotPageInterface">
+<h2><i class="icon-cogs"></i> Settings</h2>
+<h4 class="subheader">These are all settings that can, but won't normally be changed but are useful for development purposes</h4>
 
-<nav class="top-bar" ng-include src="'./nav.html'"></nav>
+<form class="custom">
+<fieldset>
+<legend>Defaults</legend>
 
-</body>
-</html>
+<div class="row">
+  <div class="large-12 columns">
+	<label>Robot Name:</label>
+	<input type="text" placeholder="Name">
+  </div>
+</div>
+
+</fieldset>
+
+</br>
+
+<fieldset>
+<legend>Internet Protocols</legend>
+
+<div class="row">
+  <div class="large-4 columns">
+	<div class="row collapse">
+	  <label>Arduino IP:</label>
+	  <div class="small-3 columns">
+		<span class="prefix">http://</span>
+	  </div>
+	  <div class="small-9 columns">
+		<input type="text" placeholder="0.0.0.0">
+	  </div>
+	</div>
+  </div>
+  <div class="large-4 columns">
+	<div class="row collapse">
+	  <label>Camera IP:</label>
+	  <div class="small-3 columns">
+		<span class="prefix">http://</span>
+	  </div>
+	  <div class="small-9 columns">
+		<input type="text" placeholder="0.0.0.0">
+	  </div>
+	</div>
+  </div>
+  <div class="large-4 columns">
+	<div class="row collapse">
+	  <label>Arduino IP:</label>
+	  <div class="small-3 columns">
+		<span class="prefix">http://</span>
+	  </div>
+	  <div class="small-9 columns">
+		<input type="text" placeholder="0.0.0.0">
+	  </div>
+	</div>
+  </div>
+</div>
+
+</fieldset>
+
+</br>
+
+<fieldset>
+<legend>Device Links</legend>
+
+<div class="row">
+  <div class="large-4 columns">
+	<label>&nbsp;</label>
+	<a href="http://www.routerlogin.net" class="small button">Router Login</a>
+  </div>
+  <div class="large-4 columns">
+	<label>&nbsp;</label>
+	<a href="http://192.168.1.2/" class="small button">Camera Login</a>
+  </div>
+  <div class="large-4 columns">
+	<label>&nbsp;</label>
+	<a href="#" class="small button">Documentation</a>
+  </div>
+</div>
+
+</fieldset>
+
+</form>

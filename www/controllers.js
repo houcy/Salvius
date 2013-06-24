@@ -19,4 +19,26 @@ function RobotPageInterface($scope) {
     ]
   };
   
+  var myApp = angular.module('myApp', ['ngResource'])
+
+	myApp.config(
+		['$routeProvider', function($routeProvider) {
+			$routeProvider.when('/', {
+				title: 'Home',
+				templateUrl: '/index.html',
+				controller: 'RobotPageInterface'
+			});
+			$routeProvider.when('/Product/:id', {
+				title: 'Product',
+				templateUrl: '/Assets/Views/Product.html',
+				controller: 'RobotPageInterface'
+			});
+		}]);
+
+	myApp.run(['$location', '$rootScope', function($location, $rootScope) {
+		$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+			$rootScope.title = current.$route.title;
+		});
+	}]);
+  
 }
