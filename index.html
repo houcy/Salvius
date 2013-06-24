@@ -1,83 +1,253 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<html ng-app>
+<head>
+	<meta charset="utf-8" />
+	<title ng-bind="'interface ' + title">myApp</title>
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<link rel="stylesheet" href="/css/foundation.css"></link>
+	<link rel="stylesheet" href="/css/normalize.css"></link>
+	<link rel="stylesheet" href="/css/font-awesome.min.css"></link>
+	<link rel="stylesheet" href="/css/salvius.css"></link>
+	<script src="/js/angular/angular.js"></script>
+	<script src="/js/vendor/zepto.js"></script>
+	<script src="/js/vendor/custom.modernizr.js"></script>
+	<script src="/js/vendor/jquery.js"></script>
+	<script src="/js/foundation.min.js"></script>
+	<script src="/js/dropzone.js"></script>
+	<script src="/controllers.js"></script>
+	
+	<script src="/js/search/searchEngine.js"></script>
+	<script src="/js/search/searchDB.js"></script>
+	
+	<!-- gh-page spacific links -->
+	<link rel="stylesheet" href="http://gunthercox.github.io/Salvius/css/foundation.css"></link>
+	<link rel="stylesheet" href="http://gunthercox.github.io/Salvius/css/normalize.css"></link>
+	<link rel="stylesheet" href="http://gunthercox.github.io/Salvius/css/font-awesome.min.css"></link>
+	<link rel="stylesheet" href="http://gunthercox.github.io/Salvius/css/salvius.css"></link>
+	<script src="http://gunthercox.github.io/Salvius/js/angular/angular.js"></script>
+	<script src="http://gunthercox.github.io/Salvius/js/vendor/zepto.js"></script>
+	<script src="http://gunthercox.github.io/Salvius/js/vendor/custom.modernizr.js"></script>
+	<script src="http://gunthercox.github.io/Salvius/js/vendor/jquery.js"></script>
+	<script src="http://gunthercox.github.io/Salvius/js/foundation.min.js"></script>
+	<script src="http://gunthercox.github.io/Salvius/js/dropzone.js"></script>
+	<script src="http://gunthercox.github.io/Salvius/controllers.js"></script>
+	
+	<script src="http://gunthercox.github.io/Salvius/js/search/searchEngine.js"></script>
+	<script src="http://gunthercox.github.io/Salvius/js/search/searchDB.js"></script>
 
-    <title>Salvius by gunthercox</title>
-  </head>
+	<script>
+	$(document).foundation();
+	
+	$(document).ready(function(){
+		$('#button').on('click', function(){
+			$(this).toggleClass('on');
+		});
+	});
+	</script>
+	
+</head>
+<body ng-controller="RobotPageInterface">
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Salvius</h1>
-        <h2>Open Source Humanoid Robot</h2>
-        <a href="https://github.com/gunthercox/Salvius" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+<script type="text/javascript">
+if (getURLvalue('search')) {
+	// Do the search
+	results = performSearch(getURLvalue("searchTxt"), 3);
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+	if (results) {
+		// This means that there are search results to be displayed.
+		// Loop through them and make it pretty!
+		if (is_array(results)) {
+			document.writeln("<ol>");
+			for (r = 0; r < results.length; r++) {
+				result = searchDB[results[r]];
+			
+				// This is where you modify the formatting of the results
+				document.writeln("<li class=\"result\"><div class=\"result-title\"><a href=\"" + result.url + "\">" + result.heading + "</a></div>");
+				document.writeln("<div class=\"result-desc\">" + result.description + "</div></li>");
+			}
+			document.writeln("</ol>");
+		}
+		// If it's not an array, then we got an error message, so display that rather than results
+		else {
+			document.writeln("<i>" + results + "</i>");
+			document.writeln("<br />");
+		}
+	}
+}
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+</script>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<div data-alert class="alert-box alert hidden" style="display:none">{{alert}}<a href="#" class="close">&times;</a></div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/gunthercox/Salvius/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/gunthercox/Salvius/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/gunthercox/Salvius"></a> is maintained by <a href="https://github.com/gunthercox">gunthercox</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
-
+<div class="section-container auto" data-section>
+<section>
+<h3 class="title" data-section-title><a href="#panel1"><i class="icon-gamepad"></i> GUI</a></h3>
+<div class="content" data-section-content>
+  <p>Graphic interface for the robot.</p>
   
-  </body>
+  <div class="row display">
+  
+	<div class="large-4 columns">
+		<div class="row collapse">
+		<div class="small-10 columns">
+		<input type="text" placeholder="Text to Speech">
+		</div>
+		<div class="small-2 columns">
+		<a href="#" class="button prefix">Say</a>
+		</div>
+		</div>
+	</div>
+	  
+	  <div class="large-4 columns">
+		<div class="progress success round">
+		<span class="meter" style="width: 60%"><label>Battery charge</label></span>
+		</div>
+	  </div>
+	  
+	  <div class="large-4 columns">
+		<div class="switch round">
+		<input id="z" name="switch-z" type="radio" checked>
+		<label for="z" onclick="">Teleoperated mode</label>
+
+		<input id="z1" name="switch-z" type="radio">
+		<label for="z1" onclick="">Atonomus mode</label>
+
+		<span></span>
+		</div>
+	  </div>
+	</div>
+	
+	<div class="row display">
+	
+		<div class="large-4 columns">
+			<div class="row collapse">
+			<div class="small-10 columns">
+			<input type="text" placeholder="Text to Handwriting">
+			</div>
+			<div class="small-2 columns">
+			<a href="#" class="button prefix">Write</a>
+			</div>
+			</div>
+		</div>
+	  
+	  <div class="large-4 columns">
+		<img src="http://192.168.1.2/image.jpg">
+	  </div>
+	  <div class="large-4 columns">
+		<div class="switch round">
+		<input id="ir" name="switch-ir" type="radio" checked>
+		<label for="ir" onclick="">Infrared Off</label>
+
+		<input id="ir" name="switch-ir" type="radio">
+		<label for="ir" onclick="">Infrared On</label>
+
+		<span></span>
+		</div>
+	  </div>
+	</div>
+	
+</div>
+</section>
+
+<section>
+	<h3 class="title" data-section-title><a href="#panel2"><i class="icon-terminal"></i> Terminal</a></h3>
+	<div class="content" data-section-content>
+	
+	<div style="color:#0f0;background:#000;width:100%;height:300px;padding:10px">
+	Terminal login will appear here
+	</div>
+
+	</div>
+</section>
+
+<section>
+	<h3 class="title" data-section-title><a href="#panel2"><i class="icon-compass"></i> Sensors</a></h3>
+	<div class="content" data-section-content>
+		<p>Complete listing of all sensor readings</p>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>{{sensors.sensortype}}</th>
+					<th>{{sensors.valuetype}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="sensor in sensors.components">
+					<td>{{sensor.type}}</td>
+					<td>{{sensor.reading}} {{sensor.unit}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+<section>
+<h3 class="title" data-section-title><a href="#panel2"><i class="icon-sitemap"></i> FTP</a></h3>
+<div class="content" data-section-content>
+  <p>Drag files here to upload them. Drag files from here to download them. Click file for options menu to download, view, edit.</p>
+  
+	<form action="/file-upload" class="dropzone">
+	<div class="fallback">
+	<input name="file" type="file" multiple />
+	</div>
+	</form>
+  
+</div>
+</section>
+
+<section>
+	<h3 class="title" data-section-title><a href="#panel2"><i class="icon-info-sign"></i> System</a></h3>
+	<div class="content" data-section-content>
+		<br><button data-reveal-id="shutdown"><i class="icon-off"></i> Shutdown</button>
+		<button data-reveal-id="settings"><i class="icon-cogs"></i> Settings</button>
+		<p>Computer, network and hardware information.</p>
+		<div ng-include src="'./partition/index.html'"></div>
+	</div>
+</section>
+
+<section>
+
+	<h3 class="title" data-section-title><a href="#panel2">
+	<form name="search" action="index.html" method="get" class="ng-pristine ng-valid">
+	<div class="row collapse">
+		<div class="small-10 columns">
+			<input class="small" type="text" name="searchTxt" placeholder="Search or command">
+		</div>
+		<div class="small-2 columns">
+			<input class="prefix button" type="submit" value="Go" name="search">
+		</div>
+	</div>
+	</form>
+	</h3>
+	<div class="content" data-section-content>
+	
+	</div>
+</section>
+  
+</div>
+
+<!-- Modals in like to live right before the closing body tag -->
+
+<div id="terminal" class="reveal-modal">
+  <div>TERMINAL</div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="settings" class="reveal-modal">
+  <div class="large-12 columns" ng-include src="'./settings.html'"></div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="shutdown" class="reveal-modal shutdown">
+	<h2 style="color:#f00"><i class="icon-warning-sign"></i> Emergency Shutdown</h2>
+	<section>
+	<a href="#" class="pushbutton on" id="button"><i class="icon-off"></i></a>
+	<span class="led"></span>
+	</section>
+	<p style="color:#F60">WARNING: This operation will deactivate all systems on the robot. Sudden deactivation may cause damage to the robot and objects near by.</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+</body>
 </html>
