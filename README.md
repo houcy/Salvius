@@ -2,6 +2,11 @@
 
 ####Salvius is an open source humanoid robot. For additional details visit: [http://salviusrobot.blogspot.com](http://salviusrobot.blogspot.com)
 
+The main idea that I am attempting to promote is onboard expirimental development. My goal is to create this software
+so that I, and anyone else who needs it can develop and make changes to a robot's programming rapidly, and without
+having to plug in via a tethered connection. My web interface also is designed to contain many usefull control, and
+diagnostic tools.
+
 ## Server Setup:
 I don't always set up servers but when I do, I choose Ubuntu.
 * Install or use a copy of Ubuntu Server edition. It is also helpful to install OpenSSH at the same time.
@@ -10,6 +15,12 @@ I don't always set up servers but when I do, I choose Ubuntu.
 
 ```
 
+```
+
+Install the robots web ui by cloning this git repository.
+```
+cd usr/share/nginx/www/
+git clone https://github.com/gunthercox/Salvius.git
 ```
 
 After you make changes to files on the server you should restart nginx.
@@ -45,11 +56,6 @@ more efficient than using the java library.
 * [nginx](http://wiki.nginx.org/)
 * [Foundation UI](http://foundation.zurb.com/)
 * [OneGate](https://github.com/liftoff/GateOne)
-
-The main idea that I am attempting to promote is onboard expirimental development. My goal is to create this software
-so that I, and anyone else who needs it can develop and make changes to a robot's programming rapidly, and without
-having to plug in via a tethered connection. My web interface also is designed to contain many usefull control, and
-diagnostic tools.
 
 ***
 
