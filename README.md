@@ -32,16 +32,12 @@ sudo service nginx restart
 * The java file in the interaction directory gets compiled as a jar and runs on the robots computer.
 * The Arduino sketch in the arduino directory gets uploaded to the Arduino board.
 
-***
-
 ## Arduino Setup:
 * Plug Ethernet shield into Arduino Uno.
 * Plug Seeed Relay Shield into Ethernet Shield.
 * Attach 9 volt power supply to GND and +9V plugs of Relay Shield.
 * PIR positive(+) to arduino 5V, PIR negative(-) to arduino GND, PIR OUT to HUB2 D3.
 * Connect Ethernet shield to wireless router with Ethernet cable.
-
-***
 
 ## Development:
 ~~I have recently added the rxtx-2.1-7r2 library written mostly in java to this repository. The rxtx-2.1-7r2 library is
