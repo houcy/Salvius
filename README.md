@@ -61,7 +61,11 @@ more efficient than using the java library.
 You can install all required packages for this project by running the following
 ```
 sudo apt-get install nginx nodejs npm
-sudo npm install -g component
+cd /tmp
+git clone http://github.com/isaacs/npm.git
+cd npm
+sudo make install
+npm install express
 ```
 
 
