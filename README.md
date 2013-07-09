@@ -49,11 +49,10 @@ I am currently working on implementing AJSON to interact with the arduino boards
 more efficient than using the java library.
 
 ### Tools and libraries included in this project
-* [nginx](http://wiki.nginx.org/)
-* [Foundation UI](http://foundation.zurb.com/)
+* [nginx](http://wiki.nginx.org)
+* [angularjs](http://angularjs.org)
+* [Foundation UI](http://foundation.zurb.com)
 * [OneGate](https://github.com/liftoff/GateOne)
-
-***
 
 ## License:
 @author: Gunther Cox
