@@ -52,15 +52,16 @@ more efficient than using the java library.
 * [angularjs](http://angularjs.org)
 * [Foundation UI](http://foundation.zurb.com)
 * [OneGate](https://github.com/liftoff/GateOne)
-* [component](https://github.com/component/component)
 
 #### Packages
 * [nginx](http://wiki.nginx.org)
 * [nodejs](http://nodejs.org)
+* [component](https://github.com/component/component)
 
 You can install all required packages for this project by running the following
 ```
-apt-get install nginx nodejs
+sudo apt-get install nginx nodejs npm
+sudo npm install -g component
 ```
 
 
