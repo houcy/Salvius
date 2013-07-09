@@ -1,6 +1,6 @@
 # Open Source Humanoid Robot
 
-####Salvius is an open source humanoid robot. For additional details visit: [http://salviusrobot.blogspot.com](http://salviusrobot.blogspot.com)
+####Salvius is an open source humanoid robot. For additional details visit:
 
 The main idea that I am attempting to promote is onboard expirimental development. My goal is to create this software
 so that I, and anyone else who needs it can develop and make changes to a robot's programming rapidly, and without
@@ -39,11 +39,7 @@ sudo service nginx restart
 * PIR positive(+) to arduino 5V, PIR negative(-) to arduino GND, PIR OUT to HUB2 D3.
 * Connect Ethernet shield to wireless router with Ethernet cable.
 
-## Development:
-~~I have recently added the rxtx-2.1-7r2 library written mostly in java to this repository. The rxtx-2.1-7r2 library is
-the same one that is used in the Arduino IDE to allow the computer to communicate with the Arduino board through the
-serial port. I hope to use this library to allow a developer to access and make modifications to the microcontroller's
-code directly from the web interface on the robot's server.~~
+## Development: [![Build Status](https://travis-ci.org/gunthercox/Salvius.png?branch=master)](https://travis-ci.org/gunthercox/Salvius)
 
 I am currently working on implementing AJSON to interact with the arduino boards via api. This will be much simpler and
 more efficient than using the java library.
