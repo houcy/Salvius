@@ -44,6 +44,8 @@ sudo service nginx restart
 I am currently working on implementing AJSON to interact with the arduino boards via api. This will be much simpler and
 more efficient than using the java library.
 
+Check out what the interface looks like on the gh-pages branch: [http://gunthercox.github.io/Salvius/](http://gunthercox.github.io/Salvius/)
+
 ### Tools and libraries included in this project
 * [angularjs](http://angularjs.org)
 * [Foundation UI](http://foundation.zurb.com)
