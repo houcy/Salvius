@@ -47,6 +47,7 @@ more efficient than using the java library.
 ### Tools and libraries included in this project
 * [angularjs](http://angularjs.org)
 * [Foundation UI](http://foundation.zurb.com)
+* [DropzoneJS](http://www.dropzonejs.com)
 * [OneGate](https://github.com/liftoff/GateOne) [Wikipedia](http://en.wikipedia.org/wiki/Web-based_SSH)
 
 #### Packages
