@@ -56,19 +56,22 @@ Check out what the interface looks like on the gh-pages branch: [http://guntherc
 #### Packages
 * [nginx](http://wiki.nginx.org)
 * [nodejs](http://nodejs.org)
+* [express](http://expressjs.com/)
 * [component](https://github.com/component/component)
 
-You can install all required packages for this project by running the following
+You can install required packages for this project by running the following
 ```
-sudo apt-get install nginx nodejs npm
-cd /tmp
-git clone http://github.com/isaacs/npm.git
-cd npm
-sudo make install
-npm install express
+sudo apt-get install nginx
 ```
 
-
+For installing node.js and npm there is wonderfull script that works, just download and run it.
+I have also included express in this install
+```
+wget https://npmjs.org/install.sh
+sudo sh install.sh
+sudo npm install express
+sudo npm install component
+```
 ## License:
 @author: Gunther Cox
 @website: http://salviusrobot.blogspot.com
