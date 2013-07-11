@@ -57,6 +57,7 @@ Check out what the interface looks like on the gh-pages branch: [http://guntherc
 * [angularjs](http://angularjs.org)
 * [Foundation UI](http://foundation.zurb.com)
 * [DropzoneJS](http://www.dropzonejs.com)
+* [hQuery Knob](http://anthonyterrien.com/knob/)
 * [d3.js](http://d3js.org)
 * [OneGate](https://github.com/liftoff/GateOne) [Wikipedia](http://en.wikipedia.org/wiki/Web-based_SSH)
 
