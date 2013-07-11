@@ -11,10 +11,17 @@ diagnostic tools.
 I don't always set up servers but when I do, I choose Ubuntu.
 * Install or use a copy of Ubuntu Server edition. It is also helpful to install OpenSSH at the same time.
 * On the server it is helpfull to install OpenSSH, git, and nginx.
-* Configureing nginx is wicked easy, just edit etc/nginx/nginx.conf
+* Configureing nginx is wicked easy, just edit etc/nginx/nginx.conf and add the following just beffore the closing bracket
 
 ```
-
+server {
+        listen 80;
+        server_name _;
+        location / {
+                root /usr/share/nginx/www/Salvius;
+                index index.html index.htm;
+        }
+}
 ```
 
 Install the robots web ui by cloning this git repository.
