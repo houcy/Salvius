@@ -85,4 +85,4 @@ This work is GPL-3.0
 @website: http://salviusrobot.blogspot.com
 
 This project has been made possible with funding from the following businesses and individuals:
-Jennifer Cox, Adam Iredale, Janet Wise, Glen Zenor, Boris Hofer, Señora Alderperson, Wilbraham Music (Chris Cox),June Cox, Rantz
+Jennifer Cox, Adam Iredale, Janet Wise, Glen Zenor, Boris Hofer, Señora Alderperson, Wilbraham Music (Chris Cox), June Cox, Rantz
