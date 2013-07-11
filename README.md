@@ -1,6 +1,6 @@
 # Open Source Humanoid Robot
 
-####Salvius is an open source humanoid robot. For additional details visit:
+####Salvius is an open source humanoid robot. For additional details visit: [salviusrobot.blogspot.com](http://salviusrobot.blogspot.com)
 
 The main idea that I am attempting to promote is onboard expirimental development. My goal is to create this software
 so that I, and anyone else who needs it can develop and make changes to a robot's programming rapidly, and without
