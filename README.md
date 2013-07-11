@@ -18,7 +18,7 @@ server {
         listen 80;
         server_name _;
         location / {
-                root /usr/share/nginx/www/Salvius;
+                root /usr/share/nginx/www;
                 index index.html index.htm;
         }
 }
