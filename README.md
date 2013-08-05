@@ -69,7 +69,7 @@ Check out what the interface looks like on the gh-pages branch: [http://guntherc
 
 You can install required packages for this project by running the following
 ```
-sudo apt-get install nginx
+sudo apt-get install nginx git make
 ```
 
 For installing node.js and npm there is wonderfull script that works, just download and run it.
